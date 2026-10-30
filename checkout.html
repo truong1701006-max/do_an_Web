@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Thanh toán đơn hàng – Văn Trường Luxury Mobile</title>
+  <meta name="description" content="Thanh toán an toàn, bảo mật tại Văn Trường Luxury Mobile."/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body { margin:0; padding:0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display:none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#e11d48",
+            "primary-container": "#be123c",
+            "primary-fixed": "#ffe4e6",
+            "secondary": "#5f5e60",
+            "surface": "#f9f9fb",
+            "surface-container": "#eeeef0",
+            "surface-container-low": "#f3f3f5",
+            "surface-container-high": "#e8e8ea",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#1a1c1d",
+            "on-surface-variant": "#414753",
+            "outline": "#717785",
+            "error": "#ba1a1a",
+            "inverse-surface": "#2f3132"
+          },
+          borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+          spacing: { "space-md": "1rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-2xl": "4rem" },
+          fontFamily: { "display-hero": ["Inter"], "headline-lg": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "label-lg": ["Inter"], "label-md": ["Inter"], "label-eyebrow": ["Inter"] }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+
+<!-- TOP BAR -->
+<header class="fixed top-0 inset-x-0 z-50">
+  <div class="w-full bg-inverse-surface text-inverse-on-surface py-space-xs px-gutter">
+    <div class="max-w-[1280px] mx-auto flex items-center justify-center">
+      <div class="flex items-center justify-center gap-space-sm font-label-md text-label-md tracking-wide text-inverse-on-surface">
+        <span class="material-symbols-outlined text-sm text-primary-fixed">verified</span>
+        <span>Giao nhanh 2h miễn phí toàn quốc • Kiểm tra thanh toán tại nhà • Bảo hành 12 tháng 1-đổi-1</span>
+      </div>
+    </div>
+  </div>
+  <div class="h-20 bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-md shrink-0">
+        <a href="index.html" class="flex items-center gap-space-md">
+          <svg class="h-8 w-auto fill-current text-on-surface" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm tracking-tight text-on-surface leading-none">Văn Trường Luxury</span>
+            <span class="font-label-eyebrow text-label-eyebrow uppercase text-primary tracking-widest mt-0.5">Thế Giới Flagship Chính Hãng</span>
+          </div>
+        </a>
+      </div>
+      <nav class="hidden xl:flex items-center gap-space-xs p-1">
+        <a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="index.html">Trang chủ</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="products.html">Danh mục sản phẩm</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="categories.html">Phân loại</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="cart.html">Giỏ hàng</a>
+        <a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" href="contact.html">Hỗ trợ</a>
+      </nav>
+      <div class="flex items-center gap-space-md">
+        <a href="cart.html" class="text-sm font-semibold text-primary hover:underline flex items-center gap-1">
+          <span class="material-symbols-outlined text-base">arrow_back</span>
+          Quay lại giỏ hàng
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="w-full pt-32 pb-space-2xl bg-surface flex-1">
+  <div class="max-w-[1280px] mx-auto px-gutter">
+    
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-outline mb-6">
+      <a href="index.html" class="hover:text-primary transition-colors">Trang chủ</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <a href="cart.html" class="hover:text-primary transition-colors">Giỏ hàng</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface font-semibold">Thanh toán</span>
+    </nav>
+
+    <!-- Page Title -->
+    <div class="mb-8">
+      <h1 class="text-3xl lg:text-4xl font-bold text-on-surface">Thông tin thanh toán & Giao hàng</h1>
+      <p class="text-sm text-outline mt-1">Vui lòng kiểm tra kỹ thông tin nhận hàng để đơn hàng được vận chuyển chính xác nhất.</p>
+    </div>
+
+    <!-- Checkout Grid -->
+    <div id="checkoutMainContainer" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column: Form -->
+      <form id="checkoutForm" onsubmit="handlePlaceOrder(event)" class="lg:col-span-7 flex flex-col gap-6">
+        
+        <!-- Recipient Information -->
+        <div class="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-sm border border-surface-container">
+          <div class="flex items-center gap-3 pb-4 mb-6 border-b border-surface-container">
+            <span class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-sm">1</span>
+            <h2 class="text-lg font-bold text-on-surface">Thông tin người nhận</h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2">Họ và tên *</label>
+              <input id="recipientName" required type="text" placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-2xl bg-surface-container-low border border-surface-container text-sm font-medium outline-none focus:border-primary"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2">Số điện thoại *</label>
+              <input id="phone" required type="tel" placeholder="0988 123 456" class="w-full px-4 py-3 rounded-2xl bg-surface-container-low border border-surface-container text-sm font-medium outline-none focus:border-primary"/>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2">Email (nhận hóa đơn VAT điện tử)</label>
+              <input id="email" type="email" placeholder="example@gmail.com" class="w-full px-4 py-3 rounded-2xl bg-surface-container-low border border-surface-container text-sm font-medium outline-none focus:border-primary"/>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping Address -->
+        <div class="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-sm border border-surface-container">
+          <div class="flex items-center gap-3 pb-4 mb-6 border-b border-surface-container">
+            <span class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-sm">2</span>
+            <h2 class="text-lg font-bold text-on-surface">Địa chỉ giao hàng</h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2">Tỉnh / Thành phố *</label>
+              <select id="province" required class="w-full px-4 py-3 rounded-2xl bg-surface-container-low border border-surface-container text-sm font-medium outline-none focus:border-primary">
+                <option value="Hồ Chí Minh">TP. Hồ Chí Minh</option>
+                <option value="Hà Nội">Hà Nội</option>
+                <option value="Đà Nẵng">Đà Nẵng</option>
+                <option value="Cần Thơ">Cần Thơ</option>
+                <option value="Hải Phòng">Hải Phòng</option>
+                <option value="Bình Dương">Bình Dương</option>
+                <option value="Đồng Nai">Đồng Nai</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2">Quận / Huyện *</label>
+              <input id="district" required type="text" placeholder="Quận 1, Quận 5, Cầu Giấy..." class="w-full px-4 py-3 rounded-2xl bg-surface-container-low border border-surface-container text-sm font-medium outline-none focus:border-primary"/>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2">Địa chỉ cụ thể (Số nhà, tên đường, phường/xã) *</label>
+              <input id="address" required type="text" placeholder="VD: 12 Nguyễn Văn Cừ, Phường 2" class="w-full px-4 py-3 rounded-2xl bg-surface-container-low border border-surface-container text-sm font-medium outline-none focus:border-primary"/>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2">Ghi chú giao hàng</label>
+              <textarea id="note" rows="2" placeholder="VD: Giao hàng vào giờ hành chính, gọi trước khi đến..." class="w-full px-4 py-3 rounded-2xl bg-surface-container-low border border-surface-container text-sm font-medium outline-none focus:border-primary"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-sm border border-surface-container">
+          <div class="flex items-center gap-3 pb-4 mb-6 border-b border-surface-container">
+            <span class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-sm">3</span>
+            <h2 class="text-lg font-bold text-on-surface">Phương thức thanh toán</h2>
+          </div>
+
+          <div class="space-y-3">
+            
+            <!-- COD Option -->
+            <label class="p-4 rounded-2xl border-2 border-primary bg-primary/5 flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="payment_method" value="COD" checked class="mt-1 accent-primary" onchange="togglePaymentDetails('cod')"/>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <strong class="text-sm text-on-surface font-bold">Thanh toán khi nhận hàng (COD)</strong>
+                  <span class="material-symbols-outlined text-primary text-xl">payments</span>
+                </div>
+                <p class="text-xs text-outline mt-1">Được kiểm tra máy nguyên seal, đồng kiểm cùng shipper trước khi thanh toán tiền mặt.</p>
+              </div>
+            </label>
+
+            <!-- VietQR Option -->
+            <label class="p-4 rounded-2xl border-2 border-surface-container hover:border-outline-variant flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="payment_method" value="Chuyển khoản VietQR" class="mt-1 accent-primary" onchange="togglePaymentDetails('vietqr')"/>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <strong class="text-sm text-on-surface font-bold">Chuyển khoản ngân hàng VietQR (Quét mã 24/7)</strong>
+                  <span class="material-symbols-outlined text-primary text-xl">qr_code_2</span>
+                </div>
+                <p class="text-xs text-outline mt-1">Xác nhận tự động trong 30 giây qua tài khoản uỷ quyền Vietcombank / MB Bank.</p>
+                
+                <!-- QR Mock Box (shown when selected) -->
+                <div id="vietqrBox" class="hidden mt-4 p-4 rounded-2xl bg-white border border-surface-container-high flex flex-col sm:flex-row items-center gap-4">
+                  <div class="w-32 h-32 bg-slate-100 rounded-xl p-2 flex items-center justify-center border border-dashed border-outline">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=VanTruongLuxuryMobile_VietQR_Checkout" alt="VietQR" class="w-full h-full object-contain"/>
+                  </div>
+                  <div class="text-xs space-y-1 text-on-surface">
+                    <p><strong>Ngân hàng:</strong> MB Bank (Quân Đội) - CN Hà Nội</p>
+                    <p><strong>Số tài khoản:</strong> 0988123456888</p>
+                    <p><strong>Chủ tài khoản:</strong> CTY TNHH VĂN TRƯỜNG LUXURY MOBILE</p>
+                    <p class="text-primary font-bold">Nội dung: [Họ tên] + SĐT</p>
+                  </div>
+                </div>
+
+              </div>
+            </label>
+
+            <!-- Credit Card Option -->
+            <label class="p-4 rounded-2xl border-2 border-surface-container hover:border-outline-variant flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="payment_method" value="Thẻ Visa/Mastercard" class="mt-1 accent-primary" onchange="togglePaymentDetails('card')"/>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <strong class="text-sm text-on-surface font-bold">Thẻ Quốc Tế Visa / MasterCard / JCB</strong>
+                  <span class="material-symbols-outlined text-primary text-xl">credit_card</span>
+                </div>
+                <p class="text-xs text-outline mt-1">Cổng thanh toán bảo mật 3D-Secure 256-bit chuẩn quốc tế.</p>
+              </div>
+            </label>
+
+            <!-- Installment 0% -->
+            <label class="p-4 rounded-2xl border-2 border-surface-container hover:border-outline-variant flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="payment_method" value="Trả góp 0%" class="mt-1 accent-primary" onchange="togglePaymentDetails('installment')"/>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <strong class="text-sm text-on-surface font-bold">Trả góp 0% qua thẻ tín dụng</strong>
+                  <span class="material-symbols-outlined text-primary text-xl">percent</span>
+                </div>
+                <p class="text-xs text-outline mt-1">Liên kết 28 ngân hàng lớn, kỳ hạn 3 - 6 - 9 - 12 tháng, không mất phí hồ sơ.</p>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-full bg-primary text-white font-bold text-base hover:bg-primary-container transition-all active:scale-98 flex items-center justify-center gap-2 shadow-xl shadow-primary/25">
+          <span class="material-symbols-outlined text-xl">lock</span>
+          <span>Xác nhận đặt hàng</span>
+        </button>
+
+      </form>
+
+      <!-- Right Column: Order Review -->
+      <div class="lg:col-span-5 sticky top-28 flex flex-col gap-6">
+        
+        <div class="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-sm border border-surface-container">
+          <h3 class="text-lg font-bold text-on-surface mb-4 pb-3 border-b border-surface-container">Đơn hàng của bạn</h3>
+          
+          <!-- Items List Preview -->
+          <div id="checkoutItemsList" class="divide-y divide-surface-container max-h-80 overflow-y-auto no-scrollbar pr-1 mb-6">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Price Summary -->
+          <div class="space-y-3 text-sm border-t border-surface-container pt-4 mb-6">
+            <div class="flex justify-between text-on-surface-variant">
+              <span>Tạm tính</span>
+              <span id="checkoutSubtotal" class="font-semibold text-on-surface">0₫</span>
+            </div>
+            <div id="checkoutDiscountRow" class="hidden flex justify-between text-emerald-600 font-medium">
+              <span>Giảm giá khuyến mãi</span>
+              <span id="checkoutDiscount">-0₫</span>
+            </div>
+            <div class="flex justify-between text-on-surface-variant">
+              <span>Phí vận chuyển</span>
+              <span class="font-semibold text-emerald-600">Miễn phí giao hỏa tốc</span>
+            </div>
+            <div class="flex justify-between items-baseline pt-2 border-t border-surface-container">
+              <div>
+                <span class="text-base font-bold text-on-surface block">Tổng thanh toán</span>
+                <span class="text-[11px] text-outline">Đã gồm VAT & bảo hành 12T</span>
+              </div>
+              <span id="checkoutGrandTotal" class="text-2xl font-bold text-primary">0₫</span>
+            </div>
+          </div>
+
+          <!-- Trust points -->
+          <div class="bg-surface-container-low p-4 rounded-2xl text-xs space-y-2 text-outline">
+            <div class="flex items-center gap-2 text-on-surface font-medium">
+              <span class="material-symbols-outlined text-primary text-base">verified</span>
+              <span>100% Sản phẩm Apple chính hãng VN/A</span>
+            </div>
+            <div class="flex items-center gap-2 text-on-surface font-medium">
+              <span class="material-symbols-outlined text-primary text-base">security</span>
+              <span>Bảo mật thông tin khách hàng tuyệt đối</span>
+            </div>
+            <div class="flex items-center gap-2 text-on-surface font-medium">
+              <span class="material-symbols-outlined text-primary text-base">headset_mic</span>
+              <span>Tổng đài hỗ trợ kỹ thuật: 0988 123 456</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Success Modal State -->
+    <div id="orderSuccessModal" class="hidden py-12 px-6 max-w-xl mx-auto bg-surface-container-lowest rounded-3xl border border-surface-container shadow-xl text-center">
+      <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6">
+        <span class="material-symbols-outlined text-5xl">check_circle</span>
+      </div>
+      <h2 class="text-2xl lg:text-3xl font-bold text-on-surface mb-2">Đặt hàng thành công!</h2>
+      <p class="text-sm text-outline mb-6">Cảm ơn bạn đã tin tưởng Văn Trường Luxury Mobile. Đơn hàng của bạn đã được ghi nhận và đang được chuẩn bị để giao hỏa tốc.</p>
+      
+      <div class="bg-surface-container-low p-5 rounded-2xl text-left text-sm space-y-2 mb-8 border border-surface-container">
+        <div class="flex justify-between">
+          <span class="text-outline">Mã đơn hàng:</span>
+          <strong id="successOrderCode" class="text-primary font-bold text-base">MP...</strong>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-outline">Người nhận:</span>
+          <span id="successRecipientName" class="font-medium text-on-surface">...</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-outline">Số điện thoại:</span>
+          <span id="successPhone" class="font-medium text-on-surface">...</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-outline">Địa chỉ giao:</span>
+          <span id="successAddress" class="font-medium text-on-surface text-right max-w-xs">...</span>
+        </div>
+        <div class="flex justify-between pt-2 border-t border-surface-container">
+          <span class="text-outline">Tổng thanh toán:</span>
+          <strong id="successTotal" class="text-primary font-bold text-base">...₫</strong>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="my-orders.html" class="px-6 py-3.5 rounded-full bg-primary text-white font-semibold text-sm hover:bg-primary-container transition-all">
+          Xem đơn hàng của tôi
+        </a>
+        <a href="index.html" class="px-6 py-3.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-semibold text-sm transition-all">
+          Tiếp tục mua sắm
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-low text-on-surface-variant pt-space-3xl pb-space-2xl mt-auto">
+  <div class="max-w-[1280px] mx-auto px-gutter text-center">
+    <p class="font-body-sm text-body-sm text-outline">© 2026 Văn Trường Luxury Mobile. 100% Frontend HTML/JS.</p>
+  </div>
+</footer>
+
+<script src="assets/js/store.js"></script>
+<script>
+  function prefillUserInfo() {
+    const user = Store.getUser();
+    if (user) {
+      if (user.fullName) document.getElementById('recipientName').value = user.fullName;
+      if (user.phone) document.getElementById('phone').value = user.phone;
+      if (user.email) document.getElementById('email').value = user.email;
+      if (user.address) document.getElementById('address').value = user.address;
+    }
+  }
+
+  function renderCheckoutSummary() {
+    const cart = Store.getCart();
+    if (!cart || cart.length === 0) {
+      location.replace('cart.html');
+      return;
+    }
+
+    const list = document.getElementById('checkoutItemsList');
+    list.innerHTML = cart.map(item => `
+      <div class="py-3 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-contain rounded-xl bg-surface-container-low p-1 shrink-0 border border-surface-container"/>
+          <div>
+            <h4 class="text-xs font-bold text-on-surface leading-tight">${item.name}</h4>
+            <div class="text-[11px] text-outline mt-0.5">Số lượng: <strong>${item.quantity || 1}</strong></div>
+          </div>
+        </div>
+        <div class="text-xs font-bold text-primary shrink-0">${Store.formatMoney((item.price || 0) * (item.quantity || 1))}</div>
+      </div>
+    `).join('');
+
+    const { subtotal, discount, grandTotal } = Store.getTotals();
+    document.getElementById('checkoutSubtotal').textContent = Store.formatMoney(subtotal);
+    document.getElementById('checkoutGrandTotal').textContent = Store.formatMoney(grandTotal);
+
+    const discountRow = document.getElementById('checkoutDiscountRow');
+    if (discount > 0) {
+      discountRow.classList.remove('hidden');
+      document.getElementById('checkoutDiscount').textContent = `-${Store.formatMoney(discount)}`;
+    } else {
+      discountRow.classList.add('hidden');
+    }
+  }
+
+  function togglePaymentDetails(type) {
+    const qrBox = document.getElementById('vietqrBox');
+    if (type === 'vietqr') {
+      qrBox.classList.remove('hidden');
+    } else {
+      qrBox.classList.add('hidden');
+    }
+  }
+
+  function handlePlaceOrder(event) {
+    event.preventDefault();
+    const recipientName = document.getElementById('recipientName').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const province = document.getElementById('province').value;
+    const district = document.getElementById('district').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const note = document.getElementById('note').value.trim();
+    const paymentMethodEl = document.querySelector('input[name="payment_method"]:checked');
+    const paymentMethod = paymentMethodEl ? paymentMethodEl.value : 'COD';
+
+    if (!recipientName || !phone || !address || !district) {
+      Store.toast('Vui lòng điền đầy đủ thông tin giao hàng bắt buộc.', 'error');
+      return;
+    }
+
+    const { subtotal, discount, grandTotal } = Store.getTotals();
+    const fullShippingAddress = `${address}, ${district}, ${province}`;
+
+    const newOrder = Store.createOrder({
+      recipientName,
+      phone,
+      shippingAddress: fullShippingAddress,
+      subtotal,
+      discount,
+      total: grandTotal,
+      paymentMethod,
+      note
+    });
+
+    // Display confirmation
+    document.getElementById('checkoutMainContainer').classList.add('hidden');
+    const successModal = document.getElementById('orderSuccessModal');
+    successModal.classList.remove('hidden');
+
+    document.getElementById('successOrderCode').textContent = newOrder.orderCode;
+    document.getElementById('successRecipientName').textContent = newOrder.recipientName;
+    document.getElementById('successPhone').textContent = newOrder.phone;
+    document.getElementById('successAddress').textContent = newOrder.shippingAddress;
+    document.getElementById('successTotal').textContent = Store.formatMoney(newOrder.total);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    Store.toast(`Đặt hàng thành công! Mã đơn: ${newOrder.orderCode}`);
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    prefillUserInfo();
+    renderCheckoutSummary();
+  });
+</script>
+</body>
+</html>

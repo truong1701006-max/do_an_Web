@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chi tiết đơn hàng – Văn Trường Luxury Mobile</title>
+<meta name="description" content="Xem chi tiết đơn hàng, trạng thái vận chuyển và thông tin thanh toán."/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}}::-webkit-scrollbar{display:none;}</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#e11d48","surface-container-high":"#e8e8ea","primary-fixed-dim":"#fecdd3","surface-container":"#eeeef0","primary-fixed":"#ffe4e6","surface":"#f9f9fb","inverse-on-surface":"#f0f0f2","on-primary":"#ffffff","on-surface-variant":"#414753","surface-container-lowest":"#ffffff","on-error-container":"#93000a","outline-variant":"#c1c6d6","on-primary-container":"#fcfbff","primary-container":"#be123c","surface-variant":"#e2e2e4","surface-container-low":"#f3f3f5","on-error":"#ffffff","on-surface":"#1a1c1d","outline":"#717785","error":"#ba1a1a","error-container":"#ffdad6","inverse-surface":"#2f3132"},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},spacing:{"space-md":"1rem","space-xl":"2.5rem","space-3xl":"6rem","gutter":"1.5rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","space-2xl":"4rem"},fontFamily:{"headline-md":["Inter"],"label-eyebrow":["Inter"],"label-lg":["Inter"],"body-sm":["Inter"],"headline-xl":["Inter"],"body-md":["Inter"],"label-md":["Inter"],"headline-sm":["Inter"],"headline-lg":["Inter"],"body-lg":["Inter"]},fontSize:{"headline-md":["24px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-eyebrow":["11px",{lineHeight:"14px",letterSpacing:"0.06em",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"400"}],"headline-xl":["44px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"-0.005em",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-sm":["19px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-lg":["17px",{lineHeight:"26px",letterSpacing:"-0.01em",fontWeight:"400"}]}}}};
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- HEADER -->
+<header class="fixed top-0 inset-x-0 z-50">
+  <div class="w-full bg-inverse-surface text-inverse-on-surface py-1 px-gutter text-center">
+    <span class="text-xs opacity-80">Giao nhanh 2h miễn phí toàn quốc • Trả góp 0% • Thu cũ đổi mới đến 3.000.000₫</span>
+  </div>
+  <div class="h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm">
+    <div class="h-16 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <svg class="h-7 w-auto fill-current text-on-surface" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <div><div class="font-semibold text-sm leading-tight">Văn Trường Luxury</div><div class="text-[10px] text-primary uppercase tracking-widest">Thế Giới Flagship Chính Hãng</div></div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-1">
+        <a class="px-4 py-1.5 rounded-full text-sm text-on-surface-variant hover:bg-surface-container transition-all" href="index.html">Trang chủ</a>
+        <a class="px-4 py-1.5 rounded-full text-sm text-on-surface-variant hover:bg-surface-container transition-all" href="products.html">Sản phẩm</a>
+        <a class="px-4 py-1.5 rounded-full text-sm text-on-surface-variant hover:bg-surface-container transition-all" href="contact.html">Hỗ trợ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="cart.html" class="relative p-2 rounded-full hover:bg-surface-container transition-colors">
+          <span class="material-symbols-outlined text-xl">shopping_bag</span>
+        </a>
+        <a href="my-orders.html" class="flex items-center gap-1.5 text-sm text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-lg">arrow_back</span> Đơn hàng
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="w-full pt-20 bg-surface min-h-screen">
+  <div class="max-w-[1280px] mx-auto px-gutter py-10">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-outline mb-8">
+      <a href="index.html" class="hover:text-primary">Trang chủ</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <a href="my-orders.html" class="hover:text-primary">Đơn hàng</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface font-medium">ORD-20261001-001</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="flex flex-wrap items-start justify-between gap-4 mb-8">
+      <div>
+        <h1 class="font-headline-lg text-headline-lg text-on-surface">Chi tiết đơn hàng</h1>
+        <p class="text-sm text-outline mt-1">Đặt ngày 01/10/2026 lúc 14:30</p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold">
+        <span class="material-symbols-outlined text-sm">local_shipping</span> Đang giao hàng
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- LEFT: Order info -->
+      <div class="lg:col-span-2 flex flex-col gap-6">
+
+        <!-- Tracking -->
+        <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+          <h2 class="font-semibold text-base mb-6 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">route</span> Trạng thái vận chuyển
+          </h2>
+          <div class="relative flex flex-col gap-0">
+            <!-- Steps -->
+            <div class="flex gap-4 pb-6 relative">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center z-10">
+                  <span class="material-symbols-outlined text-on-primary text-sm">check</span>
+                </div>
+                <div class="w-0.5 bg-primary flex-1 mt-1 min-h-[24px]"></div>
+              </div>
+              <div class="pt-1">
+                <p class="font-semibold text-sm text-on-surface">Đặt hàng thành công</p>
+                <p class="text-xs text-outline">01/10/2026 14:30 · Đơn hàng đã được tiếp nhận</p>
+              </div>
+            </div>
+            <div class="flex gap-4 pb-6 relative">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center z-10">
+                  <span class="material-symbols-outlined text-on-primary text-sm">check</span>
+                </div>
+                <div class="w-0.5 bg-primary flex-1 mt-1 min-h-[24px]"></div>
+              </div>
+              <div class="pt-1">
+                <p class="font-semibold text-sm text-on-surface">Đã xác nhận</p>
+                <p class="text-xs text-outline">01/10/2026 15:00 · Nhân viên đã xác nhận đơn</p>
+              </div>
+            </div>
+            <div class="flex gap-4 pb-6 relative">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center z-10">
+                  <span class="material-symbols-outlined text-on-primary text-sm">check</span>
+                </div>
+                <div class="w-0.5 bg-outline-variant flex-1 mt-1 min-h-[24px]"></div>
+              </div>
+              <div class="pt-1">
+                <p class="font-semibold text-sm text-on-surface">Đang chuẩn bị hàng</p>
+                <p class="text-xs text-outline">01/10/2026 15:30 · Đang đóng gói sản phẩm</p>
+              </div>
+            </div>
+            <div class="flex gap-4 pb-6 relative">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center z-10 animate-pulse">
+                  <span class="material-symbols-outlined text-white text-sm">local_shipping</span>
+                </div>
+                <div class="w-0.5 bg-outline-variant flex-1 mt-1 min-h-[24px]"></div>
+              </div>
+              <div class="pt-1">
+                <p class="font-semibold text-sm text-blue-600">Đang giao hàng ✦</p>
+                <p class="text-xs text-outline">Dự kiến giao: 02/10/2026 trước 17:00</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-outline-variant flex items-center justify-center z-10">
+                  <span class="material-symbols-outlined text-outline text-sm">home</span>
+                </div>
+              </div>
+              <div class="pt-1">
+                <p class="text-sm text-outline">Đã giao hàng</p>
+                <p class="text-xs text-outline">Chưa hoàn thành</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products -->
+        <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+          <h2 class="font-semibold text-base mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">inventory_2</span> Sản phẩm đã đặt
+          </h2>
+          <div class="flex flex-col divide-y divide-outline-variant">
+            <div class="flex items-center gap-4 py-4">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeGP95H38ZQn757vdUzX8TiAPqMQU2WqWN9sDfimRn88oA68pTlUBLxmy4Trm932AKo0ehbethEKEcNUIWumM5CXdOM5Z4Ip6Hg0TvBfu6WUBVpNhhoi4STceZ2_ZBi56zgSvRfM_6wB0XSoDItSMfjTNTVn9AjzhqaC6PYjyMWOaZ7nRzPqicazrKgjDpDFDzH4c8yZ3QeiEUml8UFppIiYoOOQ2UPYGF76YsPoA" alt="" class="w-20 h-20 rounded-xl object-cover bg-surface-container flex-shrink-0"/>
+              <div class="flex-1 min-w-0">
+                <p class="font-semibold text-sm">iPhone 14 Pro 256GB</p>
+                <p class="text-xs text-outline mt-0.5">Màu: Đen · Dung lượng: 256GB · Tình trạng: Mới</p>
+                <p class="text-xs text-outline">Bảo hành: 12 tháng</p>
+              </div>
+              <div class="text-right flex-shrink-0">
+                <p class="font-semibold text-sm">21.490.000₫</p>
+                <p class="text-xs text-outline">x1</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 py-4">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6lShy95e8bVCxoZh-DIdqzuRUHnX2vQwUeN6HlxZxXoqr_VCIzirqbv5XSLQsePswh2Adi-JHBay_8VP_0eTvA16Mh2mnjbp52XpngRuqCVh2SSjTz3Ptyo-20skci6PMuAMO00uy3SBhqgh5TuaZPyOQMQC9-aHGkNlRqr6STV1u98co5EdOWyV9gwcO35-olAnctJECtfD-Egxb1RfY4Yls8O6m4HglsGL62Rc" alt="" class="w-20 h-20 rounded-xl object-cover bg-surface-container flex-shrink-0"/>
+              <div class="flex-1 min-w-0">
+                <p class="font-semibold text-sm">iPhone 15 128GB</p>
+                <p class="text-xs text-outline mt-0.5">Màu: Bạc · Dung lượng: 128GB · Tình trạng: Mới</p>
+                <p class="text-xs text-outline">Bảo hành: 12 tháng</p>
+              </div>
+              <div class="text-right flex-shrink-0">
+                <p class="font-semibold text-sm">17.990.000₫</p>
+                <p class="text-xs text-outline">x1</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Summary -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Order info -->
+        <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+          <h2 class="font-semibold text-base mb-4">Thông tin đơn hàng</h2>
+          <div class="flex flex-col gap-3">
+            <div class="flex justify-between text-sm">
+              <span class="text-outline">Mã đơn</span>
+              <span class="font-medium text-on-surface">ORD-20261001-001</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-outline">Ngày đặt</span>
+              <span class="font-medium">01/10/2026</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-outline">Thanh toán</span>
+              <span class="font-medium">COD - Tiền mặt</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-outline">Trạng thái TT</span>
+              <span class="text-amber-600 font-medium">Chưa thanh toán</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping info -->
+        <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+          <h2 class="font-semibold text-base mb-4">Địa chỉ nhận hàng</h2>
+          <div class="flex flex-col gap-2 text-sm">
+            <p class="font-semibold text-on-surface">Lê Văn Trường</p>
+            <p class="text-outline flex items-center gap-1"><span class="material-symbols-outlined text-sm">call</span> 0988 123 456</p>
+            <p class="text-outline flex items-start gap-1"><span class="material-symbols-outlined text-sm mt-0.5">location_on</span> 12 Nguyễn Văn Cừ, Phường 4, Quận 5, TP.HCM</p>
+          </div>
+        </div>
+
+        <!-- Price summary -->
+        <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+          <h2 class="font-semibold text-base mb-4">Tóm tắt thanh toán</h2>
+          <div class="flex flex-col gap-3">
+            <div class="flex justify-between text-sm">
+              <span class="text-outline">Tạm tính</span>
+              <span>39.480.000₫</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-outline">Giảm giá</span>
+              <span class="text-green-600">-0₫</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-outline">Phí vận chuyển</span>
+              <span class="text-green-600">Miễn phí</span>
+            </div>
+            <div class="border-t border-outline-variant pt-3 flex justify-between">
+              <span class="font-semibold">Tổng cộng</span>
+              <span class="font-bold text-primary text-lg">39.480.000₫</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-col gap-3">
+          <button onclick="window.print()" class="w-full py-3 rounded-xl border border-outline-variant text-sm font-medium hover:bg-surface-container transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-lg">print</span> In hóa đơn
+          </button>
+          <a href="contact.html" class="w-full py-3 rounded-xl bg-primary text-on-primary text-sm font-semibold hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-lg">support_agent</span> Liên hệ hỗ trợ
+          </a>
+          <a href="my-orders.html" class="w-full py-3 rounded-xl bg-surface-container text-on-surface text-sm font-medium hover:bg-surface-container-high transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-lg">arrow_back</span> Về danh sách đơn hàng
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-low text-on-surface-variant py-12 mt-16">
+  <div class="max-w-[1280px] mx-auto px-gutter grid grid-cols-2 md:grid-cols-4 gap-6 pb-8">
+    <div><p class="font-semibold text-on-surface mb-3">Văn Trường Luxury Mobile</p><p class="text-sm text-outline">12 Nguyễn Văn Cừ, Q5, TP.HCM</p><p class="text-sm text-outline">Hotline: 0988 123 456</p></div>
+    <div><p class="font-semibold text-on-surface mb-3">Mua hàng</p><a class="block text-sm text-outline hover:text-primary py-0.5" href="products.html">Sản phẩm</a><a class="block text-sm text-outline hover:text-primary py-0.5" href="cart.html">Giỏ hàng</a></div>
+    <div><p class="font-semibold text-on-surface mb-3">Chính sách</p><a class="block text-sm text-outline hover:text-primary py-0.5" href="warranty.html">Bảo hành</a><a class="block text-sm text-outline hover:text-primary py-0.5" href="returns.html">Đổi trả</a></div>
+    <div><p class="font-semibold text-on-surface mb-3">Hỗ trợ</p><a class="block text-sm text-outline hover:text-primary py-0.5" href="contact.html">Liên hệ</a></div>
+  </div>
+  <div class="max-w-[1280px] mx-auto px-gutter pt-6 border-t border-outline-variant">
+    <p class="text-xs text-outline">© 2026 Văn Trường Luxury Mobile. Tất cả quyền được bảo lưu.</p>
+  </div>
+</footer>
+<script src="assets/js/store.js"></script>
+</body>
+</html>

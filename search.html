@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kết quả tìm kiếm – Văn Trường Luxury Mobile</title>
+<meta name="description" content="Tìm kiếm iPhone, sản phẩm Apple chính hãng tại Văn Trường Luxury Mobile."/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}}::-webkit-scrollbar{display:none;}</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">tailwind.config={theme:{extend:{colors:{"primary":"#e11d48","surface-container-high":"#e8e8ea","primary-fixed":"#ffe4e6","surface":"#f9f9fb","inverse-on-surface":"#f0f0f2","on-primary":"#ffffff","on-surface-variant":"#414753","surface-container-lowest":"#ffffff","outline-variant":"#c1c6d6","on-primary-container":"#fcfbff","primary-container":"#be123c","surface-container":"#eeeef0","surface-container-low":"#f3f3f5","on-surface":"#1a1c1d","outline":"#717785","error":"#ba1a1a","error-container":"#ffdad6","inverse-surface":"#2f3132"},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},spacing:{"space-md":"1rem","space-xl":"2.5rem","space-3xl":"6rem","gutter":"1.5rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","space-2xl":"4rem"},fontFamily:{"headline-md":["Inter"],"label-lg":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"label-md":["Inter"],"headline-sm":["Inter"],"headline-lg":["Inter"],"body-lg":["Inter"]},fontSize:{"headline-md":["24px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"-0.005em",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-sm":["19px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-lg":["17px",{lineHeight:"26px",letterSpacing:"-0.01em",fontWeight:"400"}]}}}};
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- HEADER -->
+<header class="fixed top-0 inset-x-0 z-50">
+  <div class="w-full bg-inverse-surface text-inverse-on-surface py-1 px-gutter text-center text-xs opacity-80">
+    Giao nhanh 2h miễn phí toàn quốc • Trả góp 0% • Thu cũ đổi mới đến 3.000.000₫
+  </div>
+  <div class="h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm">
+    <div class="h-16 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <svg class="h-7 w-auto fill-current" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <div><div class="font-semibold text-sm">Văn Trường Luxury</div><div class="text-[10px] text-primary uppercase tracking-widest">Thế Giới Flagship Chính Hãng</div></div>
+      </a>
+      <!-- Search bar (large) -->
+      <form id="searchForm" class="flex-1 max-w-2xl" onsubmit="doSearch(event)">
+        <div class="flex items-center bg-surface-container-low border border-outline-variant rounded-full px-4 py-2 gap-2 focus-within:border-primary focus-within:bg-white transition-all shadow-sm">
+          <span class="material-symbols-outlined text-outline text-lg">search</span>
+          <input id="searchInput" type="text" placeholder="Tìm iPhone 16 Pro, AirPods..." autocomplete="off"
+            class="flex-1 bg-transparent outline-none text-sm text-on-surface placeholder:text-outline"/>
+          <button type="submit" class="px-3 py-1 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-all">Tìm</button>
+        </div>
+        <!-- Autocomplete -->
+        <div id="autocomplete" class="hidden absolute mt-1 w-full max-w-2xl bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant overflow-hidden z-50"></div>
+      </form>
+      <div class="flex items-center gap-3">
+        <a href="cart.html" class="relative p-2 rounded-full hover:bg-surface-container transition-colors">
+          <span class="material-symbols-outlined text-xl">shopping_bag</span>
+          <span id="cartBadge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+        </a>
+        <a href="profile.html" class="p-2 rounded-full hover:bg-surface-container transition-colors">
+          <span class="material-symbols-outlined text-xl">account_circle</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="w-full pt-20 min-h-screen">
+  <!-- Search hero -->
+  <div class="bg-surface-container-low py-8 border-b border-outline-variant">
+    <div class="max-w-[1280px] mx-auto px-gutter">
+      <p class="text-sm text-outline mb-2">Kết quả tìm kiếm cho:</p>
+      <h1 id="searchTitle" class="font-headline-lg text-headline-lg text-on-surface">"iPhone"</h1>
+      <p id="resultCount" class="text-sm text-outline mt-1">Tìm thấy 6 sản phẩm</p>
+    </div>
+  </div>
+
+  <div class="max-w-[1280px] mx-auto px-gutter py-8">
+    <div class="flex gap-8">
+
+      <!-- Sidebar filters -->
+      <aside class="hidden lg:block w-56 shrink-0">
+        <div class="sticky top-24 flex flex-col gap-5">
+          <!-- Category -->
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-outline mb-3">Danh mục</h3>
+            <div class="flex flex-col gap-2">
+              <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="checkbox" checked onchange="applyFilters()" data-cat="13" class="w-4 h-4 accent-primary"/>
+                <span class="text-sm text-on-surface group-hover:text-primary transition-colors">iPhone 13 Series</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="checkbox" checked onchange="applyFilters()" data-cat="14" class="w-4 h-4 accent-primary"/>
+                <span class="text-sm text-on-surface group-hover:text-primary transition-colors">iPhone 14 Series</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="checkbox" checked onchange="applyFilters()" data-cat="15" class="w-4 h-4 accent-primary"/>
+                <span class="text-sm text-on-surface group-hover:text-primary transition-colors">iPhone 15 Series</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="checkbox" checked onchange="applyFilters()" data-cat="16" class="w-4 h-4 accent-primary"/>
+                <span class="text-sm text-on-surface group-hover:text-primary transition-colors">iPhone 16 Series</span>
+              </label>
+            </div>
+          </div>
+          <!-- Price range -->
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-outline mb-3">Khoảng giá</h3>
+            <div class="flex flex-col gap-2">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="price" value="all" checked onchange="applyFilters()" class="w-4 h-4 accent-primary"/>
+                <span class="text-sm">Tất cả</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="price" value="under15" onchange="applyFilters()" class="w-4 h-4 accent-primary"/>
+                <span class="text-sm">Dưới 15 triệu</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="price" value="15to25" onchange="applyFilters()" class="w-4 h-4 accent-primary"/>
+                <span class="text-sm">15 – 25 triệu</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="price" value="over25" onchange="applyFilters()" class="w-4 h-4 accent-primary"/>
+                <span class="text-sm">Trên 25 triệu</span>
+              </label>
+            </div>
+          </div>
+          <!-- Sort -->
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-outline mb-3">Sắp xếp</h3>
+            <select onchange="applyFilters()" id="sortSelect" class="w-full px-3 py-2 rounded-xl border border-outline-variant text-sm bg-surface-container-lowest outline-none focus:border-primary">
+              <option value="default">Mặc định</option>
+              <option value="price-asc">Giá thấp → cao</option>
+              <option value="price-desc">Giá cao → thấp</option>
+              <option value="new">Mới nhất</option>
+            </select>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Results grid -->
+      <div class="flex-1">
+        <div id="productsGrid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+          <!-- Products injected by JS -->
+        </div>
+        <div id="noResults" class="hidden flex flex-col items-center py-20 text-center">
+          <span class="material-symbols-outlined text-6xl text-outline mb-4">search_off</span>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-2">Không tìm thấy sản phẩm</h2>
+          <p class="text-sm text-outline mb-6">Thử từ khóa khác hoặc xem tất cả sản phẩm</p>
+          <a href="products.html" class="px-6 py-2.5 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-all">Xem tất cả sản phẩm</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-low py-12 mt-8 border-t border-outline-variant">
+  <div class="max-w-[1280px] mx-auto px-gutter grid grid-cols-2 md:grid-cols-4 gap-6 pb-8">
+    <div><p class="font-semibold mb-3">Văn Trường Luxury Mobile</p><p class="text-sm text-outline">12 Nguyễn Văn Cừ, Q5, TP.HCM</p><p class="text-sm text-outline">Hotline: 0988 123 456</p></div>
+    <div><p class="font-semibold mb-3">Mua hàng</p><a class="block text-sm text-outline hover:text-primary py-0.5" href="categories.html">Danh mục</a><a class="block text-sm text-outline hover:text-primary py-0.5" href="products.html">Sản phẩm</a><a class="block text-sm text-outline hover:text-primary py-0.5" href="cart.html">Giỏ hàng</a></div>
+    <div><p class="font-semibold mb-3">Chính sách</p><a class="block text-sm text-outline hover:text-primary py-0.5" href="warranty.html">Bảo hành</a><a class="block text-sm text-outline hover:text-primary py-0.5" href="returns.html">Đổi trả</a></div>
+    <div><p class="font-semibold mb-3">Hỗ trợ</p><a class="block text-sm text-outline hover:text-primary py-0.5" href="contact.html">Liên hệ</a></div>
+  </div>
+  <div class="max-w-[1280px] mx-auto px-gutter pt-6 border-t border-outline-variant">
+    <p class="text-xs text-outline">© 2026 Văn Trường Luxury Mobile. Tất cả quyền được bảo lưu.</p>
+  </div>
+</footer>
+
+<script>
+const PRODUCTS = [
+  { id:1, name:'iPhone 13 128GB', cat:13, price:10990000, oldPrice:11990000, img:'https://lh3.googleusercontent.com/aida-public/AB6AXuB23Nyn-jm3DeSgjHMc8AG-MmR4PtgJtvyT526FXLp0rH5UkGeCDUOuIxFdOWOy2-6YV_xd7C-G9lNJ8JmyxOPvU1Tr9y7RD9WffGsMJRLWFiuU1GDC44CouMWnfmc1wmhX6T13LfAqNTFUUuRsu-oeXOw5zLyUaMol49eFQz2Nt1dWsXAypLZEE2i6fAbUundN6svFK0lpZmamYl5czaxcBpih28ij4DFcHv867ZM', badge:'Đang giảm', isNew:false },
+  { id:2, name:'iPhone 13 256GB', cat:13, price:13990000, oldPrice:null, img:'https://lh3.googleusercontent.com/aida-public/AB6AXuB23Nyn-jm3DeSgjHMc8AG-MmR4PtgJtvyT526FXLp0rH5UkGeCDUOuIxFdOWOy2-6YV_xd7C-G9lNJ8JmyxOPvU1Tr9y7RD9WffGsMJRLWFiuU1GDC44CouMWnfmc1wmhX6T13LfAqNTFUUuRsu-oeXOw5zLyUaMol49eFQz2Nt1dWsXAypLZEE2i6fAbUundN6svFK0lpZmamYl5czaxcBpih28ij4DFcHv867ZM', badge:'Nổi bật', isNew:false },
+  { id:3, name:'iPhone 14 Pro 256GB', cat:14, price:21490000, oldPrice:22990000, img:'https://lh3.googleusercontent.com/aida-public/AB6AXuCeGP95H38ZQn757vdUzX8TiAPqMQU2WqWN9sDfimRn88oA68pTlUBLxmy4Trm932AKo0ehbethEKEcNUIWumM5CXdOM5Z4Ip6Hg0TvBfu6WUBVpNhhoi4STceZ2_ZBi56zgSvRfM_6wB0XSoDItSMfjTNTVn9AjzhqaC6PYjyMWOaZ7nRzPqicazrKgjDpDFDzH4c8yZ3QeiEUml8UFppIiYoOOQ2UPYGF76YsPoA', badge:'Đang giảm', isNew:false },
+  { id:4, name:'iPhone 14 Pro 512GB', cat:14, price:25990000, oldPrice:null, img:'https://lh3.googleusercontent.com/aida-public/AB6AXuCeGP95H38ZQn757vdUzX8TiAPqMQU2WqWN9sDfimRn88oA68pTlUBLxmy4Trm932AKo0ehbethEKEcNUIWumM5CXdOM5Z4Ip6Hg0TvBfu6WUBVpNhhoi4STceZ2_ZBi56zgSvRfM_6wB0XSoDItSMfjTNTVn9AjzhqaC6PYjyMWOaZ7nRzPqicazrKgjDpDFDzH4c8yZ3QeiEUml8UFppIiYoOOQ2UPYGF76YsPoA', badge:'Nổi bật', isNew:false },
+  { id:5, name:'iPhone 15 128GB', cat:15, price:17990000, oldPrice:18990000, img:'https://lh3.googleusercontent.com/aida-public/AB6AXuD6lShy95e8bVCxoZh-DIdqzuRUHnX2vQwUeN6HlxZxXoqr_VCIzirqbv5XSLQsePswh2Adi-JHBay_8VP_0eTvA16Mh2mnjbp52XpngRuqCVh2SSjTz3Ptyo-20skci6PMuAMO00uy3SBhqgh5TuaZPyOQMQC9-aHGkNlRqr6STV1u98co5EdOWyV9gwcO35-olAnctJECtfD-Egxb1RfY4Yls8O6m4HglsGL62Rc', badge:'Mới', isNew:true },
+  { id:6, name:'iPhone 15 Pro Max 256GB', cat:15, price:30490000, oldPrice:31990000, img:'https://lh3.googleusercontent.com/aida-public/AB6AXuDszWEybAcrOFRnLqVGFy8BcjDQwNbhdSPRE-VGqh6MKQwy7xrNJSN1QC_rXSmFV7SUB5MkPF52lxP8pUvkRvPi-33sNX6fPNah3Z49o8NWIkG76PdPOQvWsZ2uWgVAlYt7-krUmOrIjM7d8MyzFxPgmvYP0tWRO-1gdb2jCz0rMXYcyTebv5kbkU6wHs1UDyMGg4c1fb1aje6JF7aGK8n4Boivy_b2nfXR_v9Jd2Y', badge:'Đang giảm', isNew:false },
+  { id:7, name:'iPhone 16 128GB', cat:16, price:21990000, oldPrice:22990000, img:'https://lh3.googleusercontent.com/aida-public/AB6AXuB6tpe2WMmYcnUGlmhOnii5pyQRr6Me_dvq-ogFw3bTxOH8zEJqver-01DbfgMxadn6VwdjTgZYV3NLiGjXbpgoCEAg5rAJDlM5eYhA0gxk-484upwFnkUc_SLltdS5UCE11PHNnZAa88HU-AhmucZlZwF_WPlS9ofAGnEG5GhnnZrswe5Npg7ZkfRiGWNeXmX1lc_NRhqkn0UvEuzH9_60Qa7N3xxsuVEH7P6wUts', badge:'Mới', isNew:true },
+];
+
+function fmt(n){return n.toLocaleString('vi-VN')+'₫';}
+
+function renderProducts(list){
+  const grid = document.getElementById('productsGrid');
+  const none = document.getElementById('noResults');
+  document.getElementById('resultCount').textContent = `Tìm thấy ${list.length} sản phẩm`;
+  if(!list.length){ grid.innerHTML=''; none.classList.remove('hidden'); return; }
+  none.classList.add('hidden');
+  grid.innerHTML = list.map(p=>`
+    <a href="product-detail.html" class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col">
+      <div class="relative aspect-square bg-surface-container overflow-hidden">
+        <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+        <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full text-[10px] font-semibold ${p.badge==='Mới'?'bg-green-100 text-green-700':p.badge==='Đang giảm'?'bg-red-100 text-red-600':'bg-primary-fixed text-primary'}">${p.badge}</span>
+        <button onclick="addToCart(event,${p.id})" class="absolute bottom-2 right-2 w-9 h-9 rounded-full bg-surface-container-lowest shadow flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:text-white">
+          <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+        </button>
+      </div>
+      <div class="p-3 flex flex-col gap-1 flex-1">
+        <p class="text-sm font-semibold text-on-surface leading-snug line-clamp-2">${p.name}</p>
+        <div class="mt-auto pt-2">
+          <p class="text-primary font-bold text-base">${fmt(p.price)}</p>
+          ${p.oldPrice?`<p class="text-xs text-outline line-through">${fmt(p.oldPrice)}</p>`:''}
+        </div>
+      </div>
+    </a>
+  `).join('');
+}
+
+function applyFilters(){
+  const q = (document.getElementById('searchInput').value||'').toLowerCase();
+  const cats = [...document.querySelectorAll('[data-cat]')].filter(c=>c.checked).map(c=>+c.dataset.cat);
+  const price = document.querySelector('[name=price]:checked')?.value||'all';
+  const sort = document.getElementById('sortSelect').value;
+  let list = PRODUCTS.filter(p=>{
+    if(q && !p.name.toLowerCase().includes(q)) return false;
+    if(!cats.includes(p.cat)) return false;
+    if(price==='under15' && p.price>=15000000) return false;
+    if(price==='15to25' && (p.price<15000000||p.price>25000000)) return false;
+    if(price==='over25' && p.price<=25000000) return false;
+    return true;
+  });
+  if(sort==='price-asc') list.sort((a,b)=>a.price-b.price);
+  else if(sort==='price-desc') list.sort((a,b)=>b.price-a.price);
+  else if(sort==='new') list.sort((a,b)=>b.isNew-a.isNew);
+  renderProducts(list);
+}
+
+function doSearch(e){
+  e.preventDefault();
+  const q = document.getElementById('searchInput').value;
+  document.getElementById('searchTitle').textContent = `"${q}"`;
+  applyFilters();
+}
+
+function addToCart(e, id){
+  e.preventDefault();
+  const cart = JSON.parse(localStorage.getItem('cart')||'{}');
+  cart[id]=(cart[id]||0)+1;
+  localStorage.setItem('cart', JSON.stringify(cart));
+  document.getElementById('cartBadge').textContent=Object.values(cart).reduce((a,b)=>a+b,0);
+  const btn=e.currentTarget;
+  btn.innerHTML='<span class="material-symbols-outlined text-lg text-green-600">check</span>';
+  setTimeout(()=>btn.innerHTML='<span class="material-symbols-outlined text-lg">add_shopping_cart</span>',1000);
+}
+
+// Init
+window.onload=()=>{
+  const params=new URLSearchParams(location.search);
+  const q=params.get('q')||'iPhone';
+  document.getElementById('searchInput').value=q;
+  document.getElementById('searchTitle').textContent=`"${q}"`;
+  applyFilters();
+  const cart=JSON.parse(localStorage.getItem('cart')||'{}');
+  document.getElementById('cartBadge').textContent=Object.values(cart).reduce((a,b)=>a+b,0);
+};
+</script>
+<script src="assets/js/store.js"></script>
+</body>
+</html>
